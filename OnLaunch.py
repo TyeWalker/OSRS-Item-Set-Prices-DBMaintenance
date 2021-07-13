@@ -37,8 +37,8 @@ def checkMapping():
                     myresult = cursor.fetchone()
                     if myresult is None:
                         # Add to DB:
-                        add_touple = (a, dict['name'], dict['limit'], dict['highalch'])
-                        cursor.execute(add_item, add_touple)
+                        add_tuple = (a, dict['name'], dict['limit'], dict['highalch'])
+                        cursor.execute(add_item, add_tuple)
                         connectDB.commit()
         connectDB.commit()
         cursor.close()

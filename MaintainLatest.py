@@ -50,10 +50,10 @@ def updateLatestPrice():
                     query_tuple = (str(a),)
                     cursor.execute(select_itemlatest, query_tuple)
                     myresult = cursor.fetchone()
-                    insert_touple = [str(a), data['data'][str(a)]['high'], hTime, data['data'][str(a)]['low'], lTime]
+                    insert_tuple = [str(a), data['data'][str(a)]['high'], hTime, data['data'][str(a)]['low'], lTime]
                     if myresult is None:
                         print("Inserting: " + str(a))
-                        cursor.execute(insert_latest, insert_touple)
+                        cursor.execute(insert_latest, insert_tuple)
                         connectDB.commit()
                     else:
                         # If both times are equal:
