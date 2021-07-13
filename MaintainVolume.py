@@ -4,6 +4,7 @@ import json
 import osrsPriceSetLists
 
 
+# Download one hour volume from osrs wiki api
 def fetchOneHourVolume():
     one_hour_volume = 'https://prices.runescape.wiki/api/v1/osrs/1h'
     response = requests.get(one_hour_volume, headers={'User-Agent': 'Item Set Prices Checker - YOURDISCORDINFO'}).json()
@@ -11,6 +12,7 @@ def fetchOneHourVolume():
         json.dump(response, write_file)
 
 
+# Download one day volume from osrs wiki api
 def fetchOneDayVolume():
     one_day_volume = 'https://prices.runescape.wiki/api/v1/osrs/24h'
     response = requests.get(one_day_volume, headers={'User-Agent': 'Item Set Prices Checker - YOURDISCORDINFO'}).json()
@@ -18,6 +20,7 @@ def fetchOneDayVolume():
         json.dump(response, write_file)
 
 
+# Update DB with new data
 def updateOneHourVolume():
     # Prepared SQL statements:
     select_onehourvolume = ("SELECT * FROM onehourvolume "

@@ -5,6 +5,7 @@ import datetime
 import osrsPriceSetLists
 
 
+# Downloads latest prices from osrs wiki api
 def fetchLatestPrices():
     latest_url = 'https://prices.runescape.wiki/api/v1/osrs/latest'
     response = requests.get(latest_url, headers={'User-Agent': 'Item Set Prices Checker - YOURDISCORDINFO '}).json()
@@ -12,6 +13,7 @@ def fetchLatestPrices():
         json.dump(response, write_file)
 
 
+# Updates the DB using the data saved in the json file.
 def updateLatestPrice():
     # Prepared SQL statements
     insert_latest = ("INSERT INTO itemlatest "
@@ -83,6 +85,7 @@ def updateLatestPrice():
     connectDB.close()
 
 
+# Delete old entries. Can change interval if needed.
 def deleteOld():
     # SQL:
     delete_old_high = ("DELETE FROM itemhightimes "
