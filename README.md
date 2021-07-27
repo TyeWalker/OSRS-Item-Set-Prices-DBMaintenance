@@ -1,6 +1,6 @@
 # OSRS-Item-Set-Prices-DBMaintenance
 
-OSRS Item Set Prices App created using Python, Flask, and Bootstrap (HTML/CSS + javascript). This programme is designed to track the prices and margin of 
+OSRS Item Set Prices App created using Python(3), Flask, and Bootstrap (HTML/CSS + javascript). This programme is designed to track the prices and margin of 
 popular item sets. Latest prices update every 2 minutes, one hour volume updates every 55 minutes, and one day volume updates every 24 hours.
 
 Currently it tracks the following item sets:
